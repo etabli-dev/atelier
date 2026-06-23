@@ -6,7 +6,7 @@ import '../../app/app_providers.dart';
 import '../../data/settings_store.dart';
 import '../../fs/workspace_controller.dart';
 import '../../fs/workspace_store.dart';
-import '../../theme/theme.dart';
+import '../../theme/coder_theme_atelier.dart';
 
 class FilesScreen extends ConsumerStatefulWidget {
   const FilesScreen({super.key});

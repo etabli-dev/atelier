@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../data/settings_store.dart';
-import '../theme/theme.dart';
+import '../theme/coder_theme_atelier.dart';
 import 'app_providers.dart';
 import '../features/files/files_screen.dart';
 import '../features/editor/editor_screen.dart';

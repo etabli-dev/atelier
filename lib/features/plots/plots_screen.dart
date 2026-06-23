@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../app/app_providers.dart';
 import '../../data/settings_store.dart';
 import '../../kernel/kernel_controller.dart';
-import '../../theme/theme.dart';
+import '../../theme/coder_theme_atelier.dart';
 
 class PlotsScreen extends ConsumerWidget {
   const PlotsScreen({super.key});

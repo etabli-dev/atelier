@@ -1,40 +1,41 @@
-// Établi Atelier — centralized theme tokens.
+// Établi Atelier — atelier-specific theme glue.
 //
-// This is the SINGLE source of truth for colors, spacing, radii, borders and
-// typography. Per the design spec ("Coder/Hugo" aesthetic): minimal,
-// whitespace-heavy, monospaced, single teal/green accent, borders over shadows.
-//
-// Do NOT hardcode colors, paddings or font families anywhere else — reference
-// these tokens. If you find yourself writing a raw Color(0x...) outside this
-// file, add a token here instead.
+// Central palette/spacing/typography come from `coder_theme.dart` (synced from
+// `_style/tokens/coder-design-system.json` via tool/sync_style.sh). Anything
+// truly atelier-specific (semantic colors for kernel state, R/Python brand
+// accents) lives here. No raw hex anywhere else in the codebase.
 
 import 'package:flutter/material.dart';
 
-/// Raw color palette. Light/Dark variants are resolved via [AppTheme].
+import 'coder_theme.dart';
+
+/// Raw color palette. Central tokens (palette + accent) come from [Coder];
+/// atelier-only semantic colors live below.
 abstract final class AppColors {
   AppColors._();
 
   /// The one accent — teal/green. Same in both light and dark.
-  static const Color accent = Color(0xFF28A745);
-  static const Color accentMuted = Color(0xFF1E7E34);
+  static const Color accent = Coder.accentBase;
+  static const Color accentMuted = Coder.accentDark;
 
-  // Light surfaces.
-  static const Color lightBackground = Color(0xFFFFFFFF);
-  static const Color lightSurface = Color(0xFFFAFAFA);
-  static const Color lightSurfaceAlt = Color(0xFFF2F2F2);
-  static const Color lightBorder = Color(0xFFE3E3E3);
-  static const Color lightText = Color(0xFF1A1A1A);
-  static const Color lightTextMuted = Color(0xFF6A6A6A);
+  // Light surfaces (central tokens).
+  static const Color lightBackground = Coder.lBackground;
+  static const Color lightSurface = Coder.lSurface;
+  static const Color lightSurfaceAlt = Coder.lSurfaceAlt;
+  static const Color lightBorder = Coder.lBorder;
+  static const Color lightText = Coder.lTextPrimary;
+  static const Color lightTextMuted = Coder.lTextSecondary;
 
-  // Dark surfaces.
-  static const Color darkBackground = Color(0xFF111315);
-  static const Color darkSurface = Color(0xFF16191C);
-  static const Color darkSurfaceAlt = Color(0xFF1D2125);
-  static const Color darkBorder = Color(0xFF2A2F35);
-  static const Color darkText = Color(0xFFE6E6E6);
-  static const Color darkTextMuted = Color(0xFF8A9199);
+  // Dark surfaces (central tokens).
+  static const Color darkBackground = Coder.dBackground;
+  static const Color darkSurface = Coder.dSurface;
+  static const Color darkSurfaceAlt = Coder.dSurfaceAlt;
+  static const Color darkBorder = Coder.dBorder;
+  static const Color darkText = Coder.dTextPrimary;
+  static const Color darkTextMuted = Coder.dTextSecondary;
 
-  // Semantic (kernel/output) — used by console & warnings later.
+  // Atelier-specific semantic & brand colors. R blue and Python yellow are
+  // external project marks and don't belong in the central token set.
   static const Color danger = Color(0xFFD73A49);
   static const Color warning = Color(0xFFE0A106);
   static const Color rAccent = Color(0xFF276DC3); // R blue
@@ -44,12 +45,12 @@ abstract final class AppColors {
 /// Whitespace scale (4pt grid). Whitespace-heavy by design.
 abstract final class AppSpacing {
   AppSpacing._();
-  static const double xs = 4;
-  static const double sm = 8;
-  static const double md = 16;
-  static const double lg = 24;
-  static const double xl = 32;
-  static const double xxl = 48;
+  static const double xs = Coder.xs;
+  static const double sm = Coder.sm;
+  static const double md = Coder.md;
+  static const double lg = Coder.lg;
+  static const double xl = Coder.xl;
+  static const double xxl = Coder.xxl;
 }
 
 /// Border radii — kept tight; the aesthetic favors crisp edges.
@@ -71,9 +72,7 @@ abstract final class AppBorders {
 abstract final class AppFonts {
   AppFonts._();
 
-  /// Bundled font family (registered in pubspec under this family name).
-  /// Falls back to platform monospace if the asset is missing.
-  static const String mono = 'JetBrainsMono';
+  static const String mono = Coder.fontMono;
   static const List<String> monoFallback = <String>[
     'monospace',
     'Menlo',

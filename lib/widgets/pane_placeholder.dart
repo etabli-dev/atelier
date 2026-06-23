@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../theme/theme.dart';
+import '../theme/coder_theme_atelier.dart';
 
 class PanePlaceholder extends StatelessWidget {
   const PanePlaceholder({

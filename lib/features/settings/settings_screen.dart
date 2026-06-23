@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/app_providers.dart';
 import '../../data/settings_store.dart';
-import '../../theme/theme.dart';
+import '../../theme/coder_theme_atelier.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
