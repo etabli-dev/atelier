@@ -1,0 +1,1 @@
+Etabli Atelier is an offline polyglot IDE that runs R (via WebR) and Python (via Pyodide) as switchable kernels inside an embedded runtime, with a shared virtual filesystem between the two. numpy, pandas, scipy, matplotlib and scikit-learn come pre-bundled. Capture base-R, ggplot2 and matplotlib plots to PNG. No network, no analytics, no accounts.
