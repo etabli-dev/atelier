@@ -1,0 +1,44 @@
+---
+title: "Funktionen"
+sidebar: de
+---
+
+Atelier kombiniert zwei vollständige WebAssembly-Laufzeiten unter einer einheitlichen, monospaced Oberfläche. Alle Module unten arbeiten ausschließlich lokal.
+
+![](../_screens/android-main.png){width=320}
+
+## Module
+
+| Tab | Funktion |
+|-----|----------|
+| **Editor**   | Monospaced Code-Editor mit Syntax-Highlighting; Ausführung in den aktiven Kernel. |
+| **Console**  | Interaktive REPL für den aktiven Kernel (R oder Python). |
+| **Files**    | Browser für den Workspace-Ordner; Lesen, Schreiben, Umbenennen, Teilen. |
+| **Plots**    | Galerie der erzeugten Plots; einzeln als PNG exportierbar. |
+| **Packages** | Paketverwaltung pro Kernel (R: `webr::install`, Python: `micropip`). |
+| **Settings** | Theme (Hell/Dunkel/System), Schriftgröße, Workspace-Pfad, Kernel-Reset. |
+
+## Kernel und Bibliotheken
+
+| Kernel | Laufzeit | Vorgebündelte Bibliotheken |
+|--------|----------|----------------------------|
+| **R**      | WebR (R 4.6 in WebAssembly) | base, stats, graphics, methods, utils; weitere via `webr::install`. |
+| **Python** | Pyodide                     | `numpy`, `pandas`, `scipy`, `matplotlib`, `scikit-learn`. |
+
+Beide Kernel teilen sich denselben `/workspace`-Pfad: eine in R geschriebene Datei liest Python ohne Konvertierung.
+
+## Plots
+
+Grafiken aus base R (`plot(...)`), ggplot2 (`ggplot(...) + ...`) und matplotlib (`plt.savefig(...)`) werden in die Plot-Galerie aufgenommen und können einzeln als PNG geteilt oder gespeichert werden.
+
+## Offline-Garantie
+
+Es gibt keinen integrierten Netzzugriff. Die einzige Stelle, an der die App Bytes über das Netz holen würde, wäre das nachträgliche Installieren von Paketen über `webr::install` oder `micropip` — und das ist eine bewusste, vom Nutzer in der Console angestoßene Aktion.
+
+## Bezug
+
+| Kanal | App |
+|-------|-----|
+| App Store (iOS) · Google Play (Android) | Atelier |
+| F-Droid — eigenes Etabli-Repository | Atelier (bündelt vorgefertigte WASM-Laufzeiten, daher nicht im F-Droid-Hauptrepo) |
+| Quellcode | [`etabli-dev/etabli-atelier`](https://github.com/etabli-dev/etabli-atelier) |

@@ -1,0 +1,46 @@
+---
+title: "Etabli Atelier"
+sidebar: de
+---
+
+<img src="../_icons/icon-atelier.svg" alt="" width="80" align="right" style="margin:0 0 1rem 1rem;">
+
+<span class="etabli-badge">Flagship-Laufzeit</span>
+
+> R und Python auf dem Telefon, vollständig offline.
+
+Etabli Atelier ist eine polyglotte IDE, die R (via WebR) und Python (via Pyodide) als umschaltbare Kernel innerhalb einer eingebetteten WebAssembly-Laufzeit ausführt. Beide Kernel teilen sich ein gemeinsames virtuelles Dateisystem; `numpy`, `pandas`, `scipy`, `matplotlib` und `scikit-learn` sind vorinstalliert. Plots aus base R, ggplot2 und matplotlib lassen sich als PNG exportieren. Kein Netz, kein Konto, keine Telemetrie.
+
+![Atelier — Startansicht auf Android](../_screens/android-main.png){width=320}
+
+## Wer profitiert davon
+
+Forschende, Studierende und Praktiker, die Statistik- und Datenwissenschafts-Code mobil schreiben, prüfen oder demonstrieren möchten — etwa unterwegs, in Lehrsituationen ohne Laborrechner oder in Umgebungen ohne Internet.
+
+## Plattformen
+
+| Plattform | Status |
+|-----------|--------|
+| iOS       | ✓      |
+| Android   | ✓      |
+| macOS     | ✓      |
+| Linux     | ✓      |
+| Windows   | ✓      |
+
+## Datenschutz
+
+Keine Analyse-Tools, keine Drittanbieter-SDKs. Die App arbeitet vollständig offline; weder Code noch Daten verlassen das Gerät. Es gibt keine Konten, keine Telemetrie, keine impliziten Netzwerkanfragen.
+
+## Installation
+
+| Plattform | Bezug |
+|-----------|-------|
+| iOS       | App Store |
+| Android   | Google Play und eigenes Etabli-F-Droid-Repository |
+| Desktop   | direkter Build aus dem Repo |
+
+Details siehe [Erste Schritte](getting-started.qmd).
+
+## Unterstützen
+
+Wenn dir die App nützt: [Liberapay](https://liberapay.com/rabanheller/) · in der App selbst findest du außerdem einen Buy-Me-a-Coffee-Link.

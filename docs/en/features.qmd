@@ -1,0 +1,44 @@
+---
+title: "Features"
+sidebar: en
+---
+
+Atelier combines two complete WebAssembly runtimes under a single monospaced interface. Every module below works strictly on-device.
+
+![](../_screens/android-main.png){width=320}
+
+## Modules
+
+| Tab | What it does |
+|-----|--------------|
+| **Editor**   | Monospaced code editor with syntax highlighting; runs into the active kernel. |
+| **Console**  | Interactive REPL for the active kernel (R or Python). |
+| **Files**    | Browser for the workspace folder; read, write, rename, share. |
+| **Plots**    | Gallery of generated plots; each exportable as PNG. |
+| **Packages** | Per-kernel package management (R: `webr::install`, Python: `micropip`). |
+| **Settings** | Theme (Light/Dark/System), font size, workspace path, kernel reset. |
+
+## Kernels and libraries
+
+| Kernel | Runtime | Bundled libraries |
+|--------|---------|-------------------|
+| **R**      | WebR (R 4.6 in WebAssembly) | base, stats, graphics, methods, utils; more via `webr::install`. |
+| **Python** | Pyodide                     | `numpy`, `pandas`, `scipy`, `matplotlib`, `scikit-learn`. |
+
+Both kernels share the same `/workspace` path: a file written in R is readable from Python without conversion.
+
+## Plots
+
+Graphics from base R (`plot(...)`), ggplot2 (`ggplot(...) + ...`) and matplotlib (`plt.savefig(...)`) are collected into the plot gallery, and each can be shared or saved individually as PNG.
+
+## Offline guarantee
+
+There is no built-in network access. The only point where the app would fetch bytes over the network is when you explicitly install a package via `webr::install` or `micropip` from the console — a deliberate user action.
+
+## Where to get it
+
+| Channel | App |
+|---------|-----|
+| App Store (iOS) · Google Play (Android) | Atelier |
+| F-Droid — Etabli's own repository | Atelier (ships pre-built WASM runtimes, so it is not in the main F-Droid repo) |
+| Source code | [`etabli-dev/etabli-atelier`](https://github.com/etabli-dev/etabli-atelier) |

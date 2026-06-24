@@ -1,0 +1,46 @@
+---
+title: "Etabli Atelier"
+sidebar: fr
+---
+
+<img src="../_icons/icon-atelier.svg" alt="" width="80" align="right" style="margin:0 0 1rem 1rem;">
+
+<span class="etabli-badge">Application phare</span>
+
+> R et Python sur votre téléphone, entièrement hors ligne.
+
+Etabli Atelier est un IDE polyglotte qui exécute R (via WebR) et Python (via Pyodide) comme noyaux commutables dans un runtime WebAssembly embarqué. Les deux noyaux partagent un même système de fichiers virtuel ; `numpy`, `pandas`, `scipy`, `matplotlib` et `scikit-learn` sont préinstallés. Les graphiques issus de base R, ggplot2 et matplotlib s'exportent en PNG. Aucun réseau, aucun compte, aucune télémétrie.
+
+![Atelier — vue principale sur Android](../_screens/android-main.png){width=320}
+
+## À qui ça s'adresse
+
+Aux chercheuses, étudiants et praticiens qui écrivent, vérifient ou démontrent du code statistique et de science des données en mobilité — sur le terrain, en cours sans machine de labo, ou dans des environnements sans Internet.
+
+## Plateformes
+
+| Plateforme | Statut |
+|------------|--------|
+| iOS        | ✓      |
+| Android    | ✓      |
+| macOS      | ✓      |
+| Linux      | ✓      |
+| Windows    | ✓      |
+
+## Vie privée
+
+Aucun outil d'analyse, aucun SDK tiers. L'application fonctionne entièrement hors ligne ; ni le code ni les données ne quittent l'appareil. Pas de compte, pas de télémétrie, pas de requêtes réseau implicites.
+
+## Installation
+
+| Plateforme | Distribution |
+|------------|--------------|
+| iOS        | App Store |
+| Android    | Google Play et le dépôt F-Droid propre à Etabli |
+| Desktop    | build direct depuis le dépôt |
+
+Détails : voir [Premiers pas](getting-started.qmd).
+
+## Soutenir
+
+Si l'appli vous est utile : [Liberapay](https://liberapay.com/rabanheller/) · dans l'appli même vous trouverez également un lien Buy-Me-a-Coffee.
